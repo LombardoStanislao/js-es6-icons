@@ -166,11 +166,24 @@ $(document).ready(function(){
 
   });
 
+  $('#icon-choise').change(function() {
+
+    const typeSelected = $(this).val();
+
+    //Cancello tutte le icone
+    $('#all-icons').empty();
+
+    // Recupero solo quelle scelte dall'utente
+
+    const iconChosen = icons.filter((icon) => {
+
+        return typeSelected == icon.type;
+
+    });
+
+    
 
 
-
-
-
-
+  });
 
 });
