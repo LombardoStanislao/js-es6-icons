@@ -6,6 +6,10 @@
 // definire un array di colori e associare ad ogni tipo di icona un colore.
 // Visualizzare le icone di colore diverso in base al tipo.
 
+// milestone 3:
+// aggiungere una select per filtrare le icone in base al tipo.
+// Popolare le options della select dinamicamente e, ogni volta che cambia il valore selezionato, visualizzare le icone corrispondenti.
+
 $(document).ready(function(){
 
   const icons = [
@@ -107,21 +111,6 @@ $(document).ready(function(){
       }
   ];
 
-// Seleziono ogni singolo oggetto per estrarne gli attributi
-
-  icons.forEach((icon) => {
-
-    const {name, prefix, type, family} = icon;
-
-    $('#all-icons').append(`
-
-        <i class="${family} ${prefix}${name} fa-2x" </i>
-
-      `
-
-    )
-
-  });
 
   const colors = ['green', 'coral', 'yellow'];
 
@@ -141,7 +130,23 @@ $(document).ready(function(){
 
   });
 
-console.log(icons);
+  // Seleziono ogni singolo oggetto per estrarne gli attributi
+
+  icons.forEach((icon) => {
+
+    const {name, prefix, type, family, color} = icon;
+
+      $('#all-icons').append(`
+
+          <i class="${family} ${prefix}${name} fa-2x" style="color: ${color}" </i>
+
+
+        `
+
+      )
+
+  });
+
 
 
 
