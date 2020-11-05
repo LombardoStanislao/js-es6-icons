@@ -114,6 +114,8 @@ $(document).ready(function(){
 
   const colors = ['green', 'coral', 'yellow'];
 
+  const type = [];
+
   icons.forEach((icon, index) => {
 
     if (icon.type == 'vegetable') {
@@ -145,14 +147,26 @@ $(document).ready(function(){
 
   });
 
-  $('#icon-choise').append(`
+  icons.forEach((icon, i) => {
 
-      <option value="Animal"> Animal </option>
-      <option value="Vegetable"> Vegetable </option>
-      <option value="User"> User </option>
+    if (!type.includes(icon.type)) {
+      type.push(icon.type);
+    };
 
-    `
-  );
+  });
+
+  type.forEach((element, i) => {
+
+    $('#icon-choise').append(`
+
+        <option value="${element}"> ${element} </option>
+
+      `
+    );
+
+  });
+
+
 
 
 
