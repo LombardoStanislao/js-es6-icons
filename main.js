@@ -134,18 +134,9 @@ $(document).ready(function(){
 
   // Seleziono ogni singolo oggetto per estrarne gli attributi
 
-  icons.forEach((icon) => {
 
-    const {name, prefix, type, family, color} = icon;
+  printAllIcons(icons);
 
-      $('#all-icons').append(`
-
-          <i class="${family} ${prefix}${name} fa-2x" style="color: ${color}" </i>
-        `
-      );
-
-
-  });
 
   icons.forEach((icon, i) => {
 
@@ -168,22 +159,61 @@ $(document).ready(function(){
 
   $('#icon-choise').change(function() {
 
-    const typeSelected = $(this).val();
+      const typeSelected = $(this).val();
 
-    //Cancello tutte le icone
-    $('#all-icons').empty();
+      //Cancello tutte le icone
+      $('#all-icons').empty();
 
-    // Recupero solo quelle scelte dall'utente
+      if (typeSelected != '') {
 
-    const iconChosen = icons.filter((icon) => {
+        // Recupero solo quelle scelte dall'utente
 
-        return typeSelected == icon.type;
+        const iconChosen = icons.filter((icon) => {
 
-    });
+            return typeSelected == icon.type;
 
-    
+        });
+
+        iconChosen.forEach((icon) => {
+
+          printIcon(icon);
+
+        });
+
+      } else {
+        printAllIcons(icons);
+        console.log('dentro');
+
+      } ;
+
 
 
   });
+
+
+  function printAllIcons(icons) {
+
+    icons.forEach((icon) => {
+
+      printIcon(icon)
+
+    });
+
+  };
+
+
+  function printIcon(icon) {
+
+    const {name, prefix, type, family, color} = icon;
+
+      $('#all-icons').append(`
+
+          <i class="${family} ${prefix}${name} fa-2x" style="color: ${color}" </i>
+        `
+      );
+
+
+  }
+
 
 });
