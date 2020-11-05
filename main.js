@@ -139,13 +139,20 @@ $(document).ready(function(){
       $('#all-icons').append(`
 
           <i class="${family} ${prefix}${name} fa-2x" style="color: ${color}" </i>
-
-
         `
+      );
 
-      )
 
   });
+
+  $('#icon-choise').append(`
+
+      <option value="Animal"> Animal </option>
+      <option value="Vegetable"> Vegetable </option>
+      <option value="User"> User </option>
+
+    `
+  );
 
 
 
