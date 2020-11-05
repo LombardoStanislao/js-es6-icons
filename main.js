@@ -107,10 +107,9 @@ $(document).ready(function(){
       }
   ];
 
-  const colors = ['green', 'coral', 'yellow'];
 // Seleziono ogni singolo oggetto per estrarne gli attributi
 
-  icons.forEach((icon, i) => {
+  icons.forEach((icon) => {
 
     const {name, prefix, type, family} = icon;
 
@@ -118,12 +117,31 @@ $(document).ready(function(){
 
         <i class="${family} ${prefix}${name} fa-2x" </i>
 
-
       `
 
     )
 
   });
+
+  const colors = ['green', 'coral', 'yellow'];
+
+  icons.forEach((icon, index) => {
+
+    if (icon.type == 'vegetable') {
+
+      icon.color = 'green';
+
+    } else if (icon.type == 'user') {
+
+      icon.color = 'yellow';
+
+    } else {
+      icon.color = 'coral';
+    };
+
+  });
+
+console.log(icons);
 
 
 
