@@ -3,3 +3,16 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+#all-icons {
+  margin: 30px;
+  padding: 30px;
+  border: 1px solid lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+i {
+  padding: 20px;
+}
