@@ -181,26 +181,14 @@ $(document).ready(function(){
         });
 
       } else {
+
         printAllIcons(icons);
         console.log('dentro');
 
       } ;
 
-
-
+console.log(typeSelected);
   });
-
-
-  function printAllIcons(icons) {
-
-    icons.forEach((icon) => {
-
-      printIcon(icon)
-
-    });
-
-  };
-
 
   function printIcon(icon) {
 
@@ -214,6 +202,16 @@ $(document).ready(function(){
 
 
   }
+
+  function printAllIcons(icons) {
+
+    icons.forEach((icon) => {
+
+      printIcon(icon)
+
+    });
+
+  };
 
 
 });
